@@ -1,20 +1,19 @@
 module.exports = {
-    entry: './index.js',
+    entry: './src/index.js',
     module: {
         rules: [
             {
-                test: "/\.js$/",
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    cacheDirectory: true,
-                    presets: ['react', 'es2015']
-                }
+                use: ['babel-loader']
             }
         ]
     },
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
     output: {
-        filename: "transformed.js",
-        path: __dirname + '/build'
+        filename: "bundle.js",
+        path: __dirname + '/public/js'
     }
-}
+};
