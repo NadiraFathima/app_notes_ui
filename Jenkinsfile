@@ -1,10 +1,7 @@
 pipeline {
     agent { dockerfile true }
+    checkout scm
   stages {
-   stage('checkout') {
-   checkout scm
-   }
-
    stage('Build') {
     steps {
      sh 'node -v'
