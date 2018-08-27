@@ -8,8 +8,8 @@ pipeline {
    stage('Build') {
     steps {
      sh 'node -v'
-     sh 'npm --version'
-     sh 'npm install'
+     sh 'yarn --version'
+     sh 'yarn'
      }
    }
   }
