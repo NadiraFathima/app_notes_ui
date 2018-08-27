@@ -1,11 +1,15 @@
-node {
-stage('checkout') {
-checkout scm
-}
+pipeline {
+    agent { dockerfile true }
 
-stage('Build') {
-sh 'node -v'
-sh 'npm --version'
-sh 'npm install'
-}
+ node {
+   stage('checkout') {
+   checkout scm
+   }
+
+   stage('Build') {
+     sh 'node -v'
+     sh 'npm --version'
+     sh 'npm install'
+   }
+ }
 }
